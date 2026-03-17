@@ -1,0 +1,146 @@
+/* src/styles/trade.css */
+
+.trade-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.trade-hero h3 {
+  margin: 0;
+  letter-spacing: 0.3px;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-3-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trade-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border-radius: 16px;
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.trade-card .form-text {
+  color: var(--muted-dark);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.trade-card .form-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.trade-card .card-body {
+  padding: 2rem;
+}
+
+.trade-card .card-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.1) 0%, rgba(59,130,246,.08) 100%);
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+}
+
+.trade-form-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.trade-button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.trade-button-group .btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.trade-info-box {
+  background: rgba(124,92,255,.05);
+  border: 1px solid rgba(124,92,255,.2);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.trade-info-box small {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.trade-info-box ul {
+  margin: 0.8rem 0 0 1.5rem;
+  padding: 0;
+}
+
+.trade-info-box li {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trade-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .trade-hero h3 {
+    font-size: 1.5rem;
+  }
+  
+  .trade-form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .trade-button-group {
+    flex-direction: column;
+  }
+  
+  .trade-button-group .btn {
+    width: 100%;
+  }
+}
+/* Fix dropdown being clipped by Bootstrap card */
+.trade-card {
+  overflow: visible !important;
+}
+
+.trade-card .card-body {
+  overflow: visible !important;
+  padding: 2rem;
+}
+
+/* Dropdown wrapper - maintains relative positioning for dropdown */
+.trade-card div[style*="position: relative"] {
+  position: relative;
+  z-index: 10;
+}
+
+/* Dropdown list styling */
+.trade-card ul[style*="position: absolute"] {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 1000;
+}

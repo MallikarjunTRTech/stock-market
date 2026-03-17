@@ -1,0 +1,271 @@
+/* src/styles/watchlist.css */
+
+.watchlist-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--app-bg) 0%, var(--app-bg-secondary) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.watchlist-header {
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.watchlist-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-3-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px;
+}
+
+.add-symbol-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.add-symbol-card .card-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.08) 0%, rgba(59,130,246,.06) 100%);
+  border-radius: 13px 13px 0 0;
+}
+
+.add-symbol-input-group {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.add-symbol-input {
+  flex: 1;
+}
+
+.add-symbol-input input {
+  background: rgba(124,92,255,.04);
+  border: 1.5px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-symbol-input input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .25rem rgba(124,92,255,.2);
+  background: rgba(124,92,255,.06);
+}
+
+.add-symbol-hint {
+  color: var(--muted-dark);
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+.add-symbol-btn {
+  padding: 0.85rem 2rem;
+  white-space: nowrap;
+  align-self: flex-end;
+  margin-top: 0;
+}
+
+.watchlist-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.watchlist-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.watchlist-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.watchlist-card-symbol {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+}
+
+.watchlist-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.watchlist-card-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.watchlist-card-added {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.watchlist-card-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.watchlist-delete-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.watchlist-delete-btn:hover {
+  background: rgba(239,68,68,.15);
+  border-color: var(--danger);
+  transform: translateY(-2px);
+}
+
+.watchlist-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--muted);
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+}
+
+.watchlist-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.watchlist-empty-text {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.watchlist-container-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.watchlist-container-card .card-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.08) 0%, rgba(59,130,246,.06) 100%);
+  border-bottom: 1px solid var(--panel-border);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-size: 1rem;
+  padding: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .watchlist-title {
+    font-size: 1.8rem;
+  }
+  
+  .add-symbol-input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .add-symbol-btn {
+    width: 100%;
+    align-self: auto;
+  }
+  
+  .watchlist-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+.watchlist-card-ticker {
+  font-size: 0.85rem;
+  color: var(--text-muted, #888);
+  margin: 2px 0 12px 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.watchlist-card-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.watchlist-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.watchlist-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #888);
+}
+
+.watchlist-stat-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.watchlist-card-added-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  color: var(--text-muted, #888);
+}
+
+.watchlist-price-up   { color: #22c55e; }
+.watchlist-price-down { color: #ef4444; }
+.watchlist-price-neutral { color: #888; }
+
+.watchlist-price-pct {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}

@@ -1,0 +1,226 @@
+/* src/styles/dashboard.css */
+
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--app-bg) 0%, var(--app-bg-secondary) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-3-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.stat-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-3-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.stat-value.success {
+  background: linear-gradient(135deg, var(--accent-2) 0%, #38d878 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio-summary-table {
+  overflow-x: auto;
+}
+
+.portfolio-summary-table .table {
+  font-size: 0.95rem;
+}
+
+.portfolio-summary-table .table td:first-child,
+.portfolio-summary-table .table th:first-child {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.portfolio-summary-table .table td {
+  border-color: var(--panel-border);
+}
+
+.holding-symbol {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  border-radius: 8px;
+  font-weight: 700;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.market-value-positive {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.market-value-negative {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.trades-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:white;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.trades-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trades-header h4 {
+  margin: 0;
+  color:thistle;
+  font-size: 1.3rem;
+}
+
+.trades-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.trades-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.trades-pagination label {
+  color: white;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.trades-pagination select {
+  width: 80px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--panel-border);
+  background: rgba(124,92,255,.04);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.trades-table {
+  overflow-x: auto;
+}
+
+.trades-table .table td {
+  padding: 1.2rem 1rem;
+  border-color: var(--panel-border);
+  color: var(--text);
+}
+
+.trades-table .table th {
+  padding: 1rem;
+  border-color: var(--panel-border);
+}
+
+.trade-symbol {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  background: rgba(124,92,255,.15);
+  border-radius: 6px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.trade-side-buy {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.trade-side-sell {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .trades-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .trades-controls {
+    width: 100%;
+  }
+  
+  .portfolio-summary-table .table {
+    font-size: 0.85rem;
+  }
+  
+  .trades-table .table td,
+  .trades-table .table th {
+    padding: 0.8rem 0.5rem;
+  }
+}

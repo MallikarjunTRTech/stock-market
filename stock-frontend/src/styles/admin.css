@@ -1,0 +1,392 @@
+/* src/styles/admin.css */
+
+.admin-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--app-bg) 0%, var(--app-bg-secondary) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header {
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--warning) 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(245,158,11,.2);
+  border: 1px solid rgba(245,158,11,.3);
+  border-radius: 8px;
+  color: var(--warning);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* --- Admin KYC --- */
+.kyc-queue-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.kyc-queue-card .card-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.08) 0%, rgba(59,130,246,.06) 100%);
+  border-radius: 13px 13px 0 0;
+}
+
+.kyc-filter {
+  margin-bottom: 1.5rem;
+}
+
+.kyc-filter-label {
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.kyc-filter-select {
+  background: rgba(124,92,255,.04);
+  border: 1.5px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-weight: 500;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.kyc-filter-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .25rem rgba(124,92,255,.2);
+}
+
+.kyc-queue-list {
+  max-height: 700px;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.kyc-queue-item {
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.kyc-queue-item:hover {
+  background: rgba(124,92,255,.08);
+  border-color: var(--accent);
+}
+
+.kyc-queue-item-info {
+  flex: 1;
+}
+
+.kyc-queue-item-id {
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.3rem 0;
+}
+
+.kyc-queue-item-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.kyc-queue-item-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.kyc-profile-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.kyc-profile-card .card-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.08) 0%, rgba(59,130,246,.06) 100%);
+  border-radius: 13px 13px 0 0;
+}
+
+.kyc-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.kyc-profile-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.2px;
+}
+
+.kyc-profile-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(124,92,255,.02);
+  border-radius: 10px;
+}
+
+.kyc-profile-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.kyc-profile-field-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.kyc-profile-field-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.kyc-documents-table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.kyc-documents-table .table {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.kyc-documents-table .table thead th {
+  background: rgba(124,92,255,.03);
+  border-bottom: 2px solid var(--panel-border);
+  padding: 1rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.kyc-documents-table .table td {
+  padding: 1rem;
+  border-color: var(--panel-border);
+  color: var(--text);
+}
+
+.kyc-doc-type {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background: rgba(124,92,255,.15);
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--accent-light);
+  font-size: 0.8rem;
+}
+
+.kyc-note-textarea {
+  background: rgba(124,92,255,.04);
+  border: 1.5px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-weight: 500;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.kyc-note-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .25rem rgba(124,92,255,.2);
+  background: rgba(124,92,255,.06);
+  outline: none;
+}
+
+.kyc-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.kyc-action-btn {
+  padding: 0.75rem 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 140px;
+}
+
+/* --- Admin Users --- */
+.admin-users-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.admin-users-card .card-header {
+  background: linear-gradient(135deg, rgba(245,158,11,.08) 0%, rgba(124,92,255,.06) 100%);
+  border-radius: 13px 13px 0 0;
+  color: var(--warning);
+  border-color: rgba(245,158,11,.2);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form-label {
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.6rem;
+}
+
+.admin-form-input {
+  background: rgba(245,158,11,.04);
+  border: 1.5px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.admin-form-input::placeholder {
+  color: var(--muted-dark);
+}
+
+.admin-form-input:focus {
+  border-color: var(--warning);
+  box-shadow: 0 0 0 .25rem rgba(245,158,11,.15);
+  background: rgba(245,158,11,.06);
+  outline: none;
+}
+
+.admin-submit-btn {
+  background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+  border: none;
+  color: white;
+  padding: 0.85rem 2rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.admin-submit-btn:hover {
+  background: linear-gradient(135deg, #fbbf24, var(--warning) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245,158,11,.3);
+}
+
+.admin-form-hint {
+  color: var(--muted-dark);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Scrollbar styling */
+.kyc-queue-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.kyc-queue-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.kyc-queue-list::-webkit-scrollbar-thumb {
+  background: rgba(124,92,255,.3);
+  border-radius: 4px;
+}
+
+.kyc-queue-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(124,92,255,.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-title {
+    font-size: 1.6rem;
+  }
+  
+  .kyc-profile-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .kyc-documents-table .table {
+    font-size: 0.8rem;
+  }
+  
+  .kyc-documents-table .table thead th,
+  .kyc-documents-table .table td {
+    padding: 0.6rem 0.4rem;
+  }
+  
+  .kyc-actions {
+    flex-direction: column;
+  }
+  
+  .kyc-action-btn {
+    width: 100%;
+  }
+}

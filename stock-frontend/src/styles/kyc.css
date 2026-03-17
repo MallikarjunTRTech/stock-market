@@ -1,0 +1,228 @@
+/* src/styles/kyc.css */
+
+.kyc-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--app-bg) 0%, var(--app-bg-secondary) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.kyc-header {
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.kyc-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-3-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px;
+}
+
+.kyc-status-badge {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+  margin-bottom: 1rem;
+}
+
+.kyc-status-badge.notstarted {
+  background: rgba(124,92,255,.2);
+  color: var(--accent-light);
+}
+
+.kyc-status-badge.draft {
+  background: rgba(245,158,11,.2);
+  color: var(--warning);
+}
+
+.kyc-status-badge.submitted {
+  background: rgba(59,130,246,.2);
+  color: var(--accent-3-light);
+}
+
+.kyc-status-badge.approved {
+  background: rgba(34,197,94,.2);
+  color: var(--accent-2);
+}
+
+.kyc-status-badge.rejected {
+  background: rgba(239,68,68,.2);
+  color: var(--danger);
+}
+
+.kyc-card {
+  background: linear-gradient(135deg, var(--panel-bg) 0%, var(--panel-bg-light) 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.kyc-card .card-header {
+  background: linear-gradient(135deg, rgba(124,92,255,.08) 0%, rgba(59,130,246,.06) 100%);
+  border-radius: 13px 13px 0 0;
+}
+
+.profile-field {
+  margin-bottom: 1.2rem;
+}
+
+.profile-field label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.profile-field input {
+  background: rgba(124,92,255,.04);
+  border: 1.5px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.profile-field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .25rem rgba(124,92,255,.2);
+  background: rgba(124,92,255,.06);
+}
+
+.profile-field .form-text {
+  color: var(--muted-dark);
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+.document-upload {
+  border: 2px dashed var(--panel-border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: rgba(124,92,255,.02);
+}
+
+.document-upload:hover {
+  border-color: var(--accent);
+  background: rgba(124,92,255,.06);
+}
+
+.document-upload input[type="file"] {
+  display: none;
+}
+
+.document-upload label {
+  cursor: pointer;
+  color: var(--accent-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.document-upload .form-control {
+  cursor: pointer;
+}
+
+.documents-table {
+  width: 100%;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
+.documents-table .table {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.documents-table .table thead th {
+  background: rgba(124,92,255,.03);
+  border-bottom: 2px solid var(--panel-border);
+  padding: 1rem;
+}
+
+.documents-table .table td {
+  padding: 1rem;
+  border-color: var(--panel-border);
+  color: var(--text);
+}
+
+.doc-type {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background: rgba(124,92,255,.15);
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--accent-light);
+  font-size: 0.85rem;
+}
+
+.doc-status {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.doc-status.pending {
+  background: rgba(59,130,246,.2);
+  color: var(--accent-3-light);
+}
+
+.doc-status.accepted {
+  background: rgba(34,197,94,.2);
+  color: var(--accent-2);
+}
+
+.doc-status.rejected {
+  background: rgba(239,68,68,.2);
+  color: var(--danger);
+}
+
+.submit-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--panel-border);
+}
+
+.submit-btn {
+  padding: 0.85rem 2rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .kyc-title {
+    font-size: 1.6rem;
+  }
+  
+  .documents-table .table {
+    font-size: 0.85rem;
+  }
+  
+  .documents-table .table thead th,
+  .documents-table .table td {
+    padding: 0.8rem 0.6rem;
+  }
+  
+  .document-upload {
+    padding: 1.5rem;
+  }
+}

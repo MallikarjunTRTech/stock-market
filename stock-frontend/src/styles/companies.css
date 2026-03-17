@@ -1,0 +1,211 @@
+/* src/styles/companies.css */
+
+.companies-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--app-bg) 0%, var(--app-bg-secondary) 100%);
+  display: flex;
+  flex-direction: column;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.companies-header {
+  margin-bottom: 2rem;
+  padding: 2rem 0 2rem 0.5rem;  /* added left padding so title isn't glued to edge */
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.companies-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-3-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 20px;  /* left margin so title breathes from the container edge */
+}
+
+.companies-list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 1rem 1rem 1rem 0.5rem;
+}
+
+.companies-list .list-group-item {
+  padding: 1.5rem 1.5rem;       /* more breathing room inside each card */
+  margin-bottom: 1.2rem;        /* more gap between company cards */
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;                    /* gap between content and button */
+}
+
+.company-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+  gap: 0.4rem;                  /* space between name and ID */
+}
+
+.company-name {
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.company-id {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.company-view-btn {
+  padding: 0.65rem 1.5rem;      /* wider button */
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-radius: 10px;          /* rounder button */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;  /* smooth hover */
+}
+
+.company-view-btn:hover {
+  transform: translateY(-2px);  /* subtle lift on hover */
+  box-shadow: 0 6px 16px rgba(124, 92, 255, 0.35);
+}
+
+.stocks-table {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.stocks-table .table {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.stocks-table .table thead th {
+  padding: 1rem;
+  background: rgba(124,92,255,.03);
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.stocks-table .table td {
+  padding: 1rem;
+  border-color: var(--panel-border);
+  color: var(--text);
+}
+
+.stock-symbol {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  border-radius: 8px;
+  font-weight: 700;
+  color: white;
+  min-width: 60px;
+  text-align: center;
+}
+
+.stock-price {
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.stock-shares {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.stocks-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+
+.admin-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--panel-border);
+}
+
+.admin-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--warning);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.3px;
+}
+
+.admin-form-card {
+  background: linear-gradient(135deg, rgba(245,158,11,.04) 0%, rgba(124,92,255,.04) 100%);
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 20px rgba(245,158,11,.1);
+}
+
+.admin-form-card .card-header {
+  background: linear-gradient(135deg, rgba(245,158,11,.1) 0%, rgba(124,92,255,.06) 100%);
+  border-color: rgba(245,158,11,.2);
+  color: var(--warning);
+}
+
+.admin-form-input {
+  background: rgba(245,158,11,.06);
+  border: 1.5px solid rgba(245,158,11,.2);
+}
+
+.admin-form-input:focus {
+  border-color: var(--warning);
+  box-shadow: 0 0 0 .25rem rgba(245,158,11,.15);
+  background: rgba(245,158,11,.08);
+}
+
+.form-hint {
+  color: var(--muted-dark);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Scrollbar styling for list */
+.companies-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.companies-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.companies-list::-webkit-scrollbar-thumb {
+  background: rgba(124,92,255,.3);
+  border-radius: 4px;
+}
+
+.companies-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(124,92,255,.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .companies-title {
+    font-size: 1.8rem;
+  }
+
+  .companies-list {
+    max-height: 400px;
+  }
+
+  .stocks-table .table {
+    font-size: 0.85rem;
+  }
+
+  .stocks-table .table thead th,
+  .stocks-table .table td {
+    padding: 0.8rem 0.6rem;
+  }
+}
